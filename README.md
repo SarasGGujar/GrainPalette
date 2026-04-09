@@ -1,30 +1,19 @@
-# GrainPalette
+# Network Stress Test & DoS Attack Simulation (NS2)
 
-GrainPalette - A Deep Learning Odyssey In Rice Type Classification Through Transfer Learning
-Category: Deep Learning
+This repository contains a Network Simulator 2 (NS2) project designed to simulate a Network Stress Test and a Denial of Service (DoS) attack. The project uses **NAM (Network Animator)** for visualization and **AWK** for performance analysis.
 
-Skills Required:
-Python,CNN,Bootstrap,Tensorflow,Keras,Deep Learning,transfer learning,Flask,HTML/CSS
+## Project Overview
+The simulation creates a topology where a legitimate node and an attacker node both send traffic to a single destination. By increasing the packet rate from the attacker, we observe:
+- Link congestion.
+- Packet drops at the router.
+- Degradation of throughput for the legitimate user.
 
-Project Description:
-The Rice Type Identification AI model provides a solution for farmers and agriculture enthusiasts to identify various types of rice grains quickly and accurately. By uploading an image of a rice grain and clicking the submit button, users receive predictions for the probable type of rice, enabling informed decisions on cultivation practices such as water and fertilizer requirements. Built using Convolutional Neural Networks (CNN) and employing transfer learning with MobileNetv4, this model offers reliable classification of up to five different types of rice, catering to the needs of farmers, agriculture scientists, home growers, and gardeners.
+## Files included
+- `dos_simulation.tcl`: The main TCL script defining the network topology and traffic agents.
+- `analysis.awk`: A script to parse the `.tr` (trace) file and calculate throughput.
+- `project_report.pdf`: (Optional) Final documentation.
 
-
-
-Scenarios:
-Farmers' Crop Planning:Farmers can use the Rice Type Identification AI model to plan their crop cultivation strategies effectively. Before planting, they can upload images of rice grains from their seed stock to determine the specific types of rice they possess. Based on the predictions provided by the model, farmers can adjust their agricultural practices such as irrigation schedules, fertilization methods, and pest management strategies tailored to the requirements of each rice variety.
-
-
-
-Research and Agricultural Extension Services: 
-Agriculture scientists and extension workers utilize the AI model to assist farmers in identifying rice varieties accurately. During field visits or research trials, they can capture images of rice grains and input them into the model to obtain rapid classifications. This facilitates data collection for research studies, variety testing, and extension programs, ultimately enhancing productivity and sustainability in rice cultivation.
-
-
-
-Home Gardening and Education: 
-Home growers and gardening enthusiasts leverage the AI model to learn about different rice varieties and enhance their gardening skills. By uploading images of rice grains from seed packets or harvested crops, they can explore the diversity of rice types and understand their unique characteristics. This fosters learning and appreciation for agricultural biodiversity, promoting sustainable practices in home gardening and education initiatives.
-
-
-
-Technical Architecture:
-A picture containing text, diagram, screenshot, font
+## How to Run
+1. **Prerequisites**: Ensure you have `ns2` and `nam` installed on your Linux system.
+   ```bash
+   sudo apt-get install ns2 nam
